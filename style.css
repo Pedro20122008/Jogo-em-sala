@@ -1,0 +1,296 @@
+/* ================================
+   🎨 VARIÁVEIS DE TEMA (ESCURO - PADRÃO)
+================================ */
+:root {
+    --cor-fundo: rgba(0, 0, 0, 0.2);
+    --cor-texto: #e0f7fa;
+    --cor-container: rgba(0, 0, 0, 0.2);
+    --cor-borda: transparent;
+
+    --cor-input-bg: rgba(0, 0, 0, 0.1);
+    --cor-input-borda: #fffbfb;
+
+    --cor-botao-grad1: #6a1b9a;
+    --cor-botao-grad2: #00897b;
+    --cor-botao-hover1: #8e24aa;
+    --cor-botao-hover2: #00bfa5;
+
+    --cor-saude: #00bfa5;
+    --cor-saude-mental: #8e24aa;
+    --cor-felicidade: #7c4dff;
+
+    --cor-dinheiro-bg: #00897b;
+
+    --cor-barra-fundo: #37474f;
+    --cor-relacao-bg: #263238;
+}
+
+
+/* ================================
+   ☀️ VARIÁVEIS DO TEMA CLARO
+================================ */
+body[data-theme="light"] {
+    --cor-fundo: rgba(0, 0, 0, 0.4);
+    --cor-texto: #000000;
+    --cor-container: rgba(0, 0, 0, 0.2);
+    --cor-borda: transparent;
+
+    --cor-input-bg: rgba(0, 0, 0, 0.1);
+    --cor-input-borda: rgba(0, 0, 0, 0.6);
+
+    --cor-botao-grad1: #8e24aa;
+    --cor-botao-grad2: #00bfa5;
+    --cor-botao-hover1: #6a1b9a;
+    --cor-botao-hover2: #00796b;
+
+    --cor-saude: #00bfa5;
+    --cor-saude-mental: #8e24aa;
+    --cor-felicidade: #7c4dff;
+
+    --cor-dinheiro-bg: #00bfa5;
+
+    --cor-barra-fundo: #d1d1d1;
+    --cor-relacao-bg: #fafafa;
+}
+
+/* ================================
+   ESTILOS GERAIS
+================================ */
+
+body {
+    background-image: url('lightbg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Arial', sans-serif;
+    color: var(--cor-texto);
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.body {
+    font-family: 'Arial', sans-serif;
+    color: var(--cor-texto);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.carreirabt {
+    width: 100%;
+}
+
+#Save {
+    display: flex;
+    flex-direction: column;
+    float: left;
+}
+
+.container {
+    padding: 30px;
+    border-radius: 15px;
+    background: var(--cor-container);
+    border: 1px solid var(--cor-borda);
+    max-width: 650px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    text-align: center;
+    color: var(--cor-texto);
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 12px 0;
+    font-weight: bold;
+}
+
+input, select {
+    padding: 6px 8px;
+    margin-left: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--cor-input-borda);
+    background-color: var(--cor-input-bg);
+    color: var(--cor-texto);
+    outline: none;
+    transition: 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: var(--cor-botao-hover1);
+    box-shadow: 0 0 4px rgba(142, 36, 170, 0.6);
+}
+
+/* ================================
+   BOTÕES
+================================ */
+
+button {
+    margin-top: 15px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+    background: linear-gradient(135deg, var(--cor-botao-grad1), var(--cor-botao-grad2));
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, var(--cor-botao-hover1), var(--cor-botao-hover2));
+    transform: scale(1.05);
+}
+
+/* ================================
+   ESTATÍSTICAS
+================================ */
+
+#estatisticas {
+    margin-top: 15px;
+    white-space: pre-line;
+    padding: 15px;
+    border-radius: 10px;
+    background: var(--cor-container);
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto);
+}
+
+/* Barras */
+.sts_bar p {
+    margin: 0;
+}
+
+.barra {
+    height: 14px;
+    border-radius: 8px;
+    background: var(--cor-barra-fundo);
+    margin: 5px 0 12px;
+    overflow: hidden;
+}
+
+.barra span {
+    display: block;
+    height: 100%;
+    transition: width 0.3s ease-in-out;
+}
+
+.saude span {
+    background: var(--cor-saude);
+}
+
+.saude-mental span {
+    background: var(--cor-saude-mental);
+}
+
+.felicidade span {
+    background: var(--cor-felicidade);
+}
+
+/* ================================
+   DINHEIRO NO CANTO
+================================ */
+
+#dinheiro-display {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--cor-dinheiro-bg);
+    color: white;
+    padding: 1px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+/* ================================
+   RELACIONAMENTOS
+================================ */
+
+#relacoes {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--cor-container);
+    border-radius: 12px;
+    border: 1px solid var(--cor-borda);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.relacao {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--cor-borda);
+    background: var(--cor-relacao-bg);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s;
+}
+
+.relacao:hover {
+    transform: scale(1.02);
+}
+
+.relacao p {
+    margin: 0 0 8px;
+    font-weight: bold;
+    color: var(--cor-texto);
+}
+
+.relacao button {
+    background: linear-gradient(135deg, var(--cor-botao-grad1), var(--cor-botao-grad2));
+    margin-right: 6px;
+    margin-top: 6px;
+    font-size: 14px;
+    color: white;
+}
+
+.relacao button:hover {
+    background: linear-gradient(135deg, var(--cor-botao-hover1), var(--cor-botao-hover2));
+}
+
+/* ================================
+   ÁREA DE ATIVIDADES
+================================ */
+
+#atividades button,
+#opções button {
+    background: linear-gradient(135deg, var(--cor-botao-grad1), var(--cor-botao-grad2));
+    margin: 5px 5px 10px 0;
+    font-size: 14px;
+    color: white;
+}
+
+#atividades button:hover,
+#opções button:hover {
+    background: linear-gradient(135deg, var(--cor-botao-hover1), var(--cor-botao-hover2));
+    transform: scale(1.05);
+}
+
+/* ================================
+   ANIMAÇÃO
+================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
